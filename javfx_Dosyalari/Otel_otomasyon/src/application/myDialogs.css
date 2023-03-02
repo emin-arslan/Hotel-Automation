@@ -1,0 +1,48 @@
+.myDialog{
+    -fx-background-color: #3c3c3c;
+}
+.myDialog > *.button-bar > *.container{
+    -fx-background-color: #3c3c3c;
+}
+.myDialog > *.label.content{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+     -fx-text-fill: #FFFFFF ;
+}
+.myDialog:header *.header-panel{
+    -fx-background-color: #3c3c3c;
+}
+.myDialog:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e73739;
+}
+Button{
+	 -fx-background-color: 
+        #e73000,
+        linear-gradient(#e72530, #e70000),
+        linear-gradient(#e60000, #e50000),
+        linear-gradient(#e40000, #e30000);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+Button:hover{
+    
+    -fx-background-color: 
+    #e73739,
+        linear-gradient(#ec3538, #df484a),
+        linear-gradient(#cf282a, #ce2225),
+        linear-gradient(#f7484b, #bb2a2d);
+    
+    
+}
+Button:pressed{
+    -fx-background-color: 
+    #e73739,
+        linear-gradient(#c2292b, #bd3537),
+        linear-gradient(#be2124, #ac191b),
+        linear-gradient(#a32325, #941b1d);
+}

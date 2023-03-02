@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.kullanici_giris">
+   <left>
+      <AnchorPane fx:id="pane_logo" prefHeight="400.0" prefWidth="228.0" style="-fx-background-color: #252525;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="view_logo" fitHeight="400.0" fitWidth="228.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane fx:id="pane_giris" prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #f7f1e3;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="view_lock" fitHeight="35.0" fitWidth="43.0" layoutX="149.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl_id" layoutX="55.0" layoutY="159.0" text="Id :" textFill="#e73739">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_id" layoutX="104.0" layoutY="155.0" prefHeight="26.0" prefWidth="173.0" />
+            <Label fx:id="lbl_sifre" layoutX="55.0" layoutY="199.0" text="Şifre :" textFill="#e73739">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_giris" layoutX="55.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnGiris_Click" prefHeight="32.0" prefWidth="223.0" style="-fx-background-color: #e73739;" text="Giriş Yap" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_yetkili_giris" layoutX="55.0" layoutY="291.0" mnemonicParsing="false" onAction="#yetkili_Giris" prefHeight="32.0" prefWidth="223.0" style="-fx-background-color: blue;" text="Yetkili Giriş" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="txt_sifre" layoutX="104.0" layoutY="196.0" prefHeight="25.0" prefWidth="172.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

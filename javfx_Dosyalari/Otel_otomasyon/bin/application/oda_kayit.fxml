@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="550.0" maxWidth="589.0" prefHeight="550.0" prefWidth="589.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.oda_kayit">
+   <left>
+      <AnchorPane prefHeight="375.0" prefWidth="123.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutY="-7.0" prefHeight="448.0" prefWidth="123.0" spacing="30.0" style="-fx-border-color: #3c3c3c; -fx-border-width: 0 2 0 0; -fx-background-color: #3c3c3c; -fx-text-fill: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="lbl_odabilgi" text="Oda Bilgileri" textFill="#96b946">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_odano" text="Oda : 14" textFill="#96b946" />
+                  <Label fx:id="lbl_odadurum" text="Durum: Dolu" textFill="#96b946" />
+                  <Label fx:id="lbl_odayataksayisi" text="Yatak Sayısı: 3" textFill="#96b946" />
+                  <Label fx:id="lbl_temizliktarih" textFill="#96b946" />
+                  <Label fx:id="lbl_sorumlu" textFill="#96b946" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="5.0" top="60.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="296.0" prefWidth="210.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane fx:id="tab_oda" prefHeight="367.0" prefWidth="284.0" styleClass="tab" stylesheets="@button.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Rezervasyon">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane prefHeight="419.0" prefWidth="413.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <tabs>
+                                  <Tab text="Ekle">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="419.0" prefWidth="413.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <Label fx:id="lbl_rezonay1" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="220.0" text="Rezervasyonu Onaylayin" />
+                                                      <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="219.0" text="İsim:      ">
+                                                         <graphic>
+                                                            <TextField fx:id="txt_rezisim" prefHeight="25.0" prefWidth="171.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label contentDisplay="RIGHT" layoutX="100.0" layoutY="182.0" text="Soyisim:">
+                                                         <graphic>
+                                                            <TextField fx:id="txt_rezsoyisim" prefHeight="25.0" prefWidth="172.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="225.0" text="Telefon:">
+                                                         <graphic>
+                                                            <TextField fx:id="txt_reztel" prefHeight="25.0" prefWidth="173.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="222.0" text="Tc:         ">
+                                                         <graphic>
+                                                            <TextField fx:id="txt_reztc" prefHeight="25.0" prefWidth="174.0" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label contentDisplay="RIGHT" text="Giriş Tarihi:">
+                                                         <graphic>
+                                                            <DatePicker fx:id="txt_rezgiris" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label contentDisplay="RIGHT" text="Çıkış tarihi:">
+                                                         <graphic>
+                                                            <DatePicker fx:id="txt_rezcikis" />
+                                                         </graphic>
+                                                      </Label>
+                                                      <Button fx:id="btn_rezonayla" mnemonicParsing="false" onAction="#rezervasyon_Kaydet" prefHeight="41.0" prefWidth="253.0" text="Onayla" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="120.0" top="70.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab fx:id="tb_rezgoruntule" onSelectionChanged="#rezervasyon_Getir" text="Görüntüle">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.6778350515463918" layoutX="207.0" layoutY="62.0" orientation="VERTICAL" prefHeight="390.0" prefWidth="413.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <TableView fx:id="rez_table" layoutX="96.0" prefHeight="260.0" prefWidth="411.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columns>
+                                                                  <TableColumn fx:id="tb_rez_id" prefWidth="45.0" text="Id" />
+                                                                  <TableColumn fx:id="tb_rez_tc" prefWidth="98.0" text="TC" />
+                                                                <TableColumn fx:id="tb_rez_ad" prefWidth="63.0" text="İsim" />
+                                                                <TableColumn fx:id="tb_rez_soyad" prefWidth="68.0" text="Soyisim" />
+                                                                  <TableColumn fx:id="tb_rez_gt" prefWidth="99.0" text="Giris T" />
+                                                                  <TableColumn fx:id="tb_rez_ct" prefWidth="90.0" text="Çıkış T" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <TextField fx:id="txt_ara" layoutX="45.0" layoutY="51.0" promptText="Sütun Bilgisi Giriniz" />
+                                                            <ComboBox fx:id="cb_ara" layoutX="44.0" layoutY="14.0" prefWidth="150.0" promptText="Aranacak Sütun" />
+                                                            <Button fx:id="btn_ara" layoutX="41.0" layoutY="87.0" mnemonicParsing="false" onAction="#rezervasyon_Ara" prefHeight="41.0" prefWidth="156.0" text="Arama Yap" />
+                                                            <ComboBox fx:id="cb_guncelle" layoutX="253.0" layoutY="14.0" prefHeight="25.0" prefWidth="170.0" promptText="Güncellenecek Sütun" />
+                                                            <TextField fx:id="txt_guncelle" layoutX="253.0" layoutY="51.0" prefHeight="25.0" prefWidth="170.0" promptText="Sütun Bilgisi Giriniz" />
+                                                            <Button fx:id="btn_guncelle" layoutX="253.0" layoutY="87.0" mnemonicParsing="false" onAction="#rezervasyon_Guncelle" prefHeight="41.0" prefWidth="168.0" text="Güncelle" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </Tab>
+                                    <Tab text="Sil">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TextField fx:id="txt_rez_sil_id" layoutX="151.0" layoutY="114.0" promptText="Rezervasyon id giriniz.." />
+                                                <CheckBox fx:id="cb_rez_sil" layoutX="132.0" layoutY="158.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="198.0" text="Rezervasyon silmeyi onaylayınız." />
+                                                <Button fx:id="btn_rez_sil" layoutX="127.0" layoutY="195.0" mnemonicParsing="false" onAction="#rezervasyon_Sil" prefHeight="41.0" prefWidth="196.0" text="Rezervasyonu Sil" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab onSelectionChanged="#kayit_Selected" text="Kayıt">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane fx:id="tab_kisi" layoutY="14.0" prefHeight="419.0" prefWidth="413.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tabs>
+                                    <Tab text="Onayla">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btn_onayla" layoutX="115.0" layoutY="205.0" mnemonicParsing="false" onAction="#kayit_onayla" prefHeight="41.0" prefWidth="243.0" text="Onayla" />
+                                                <DatePicker fx:id="dt_giris" layoutX="184.0" layoutY="104.0" showWeekNumbers="true" />
+                                                <DatePicker fx:id="dt_cikis" layoutX="184.0" layoutY="152.0" />
+                                                <Label layoutX="109.0" layoutY="108.0" text="Giriş Tarihi:" />
+                                                <Label layoutX="111.0" layoutY="156.0" text="Çıkış tarihi" />
+                                                <Label fx:id="lbl_rezonay" layoutX="211.0" layoutY="54.0" text="Kayiti Onaylayin" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </Tab>
+                                 </tabs></TabPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Oda Çıkış">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="365.0">
+                           <children>
+                              <CheckBox fx:id="cb_cikis_onay" layoutX="153.0" layoutY="148.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="187.0" text="Odanın Çıkışını Onayliyorum." />
+                              <Button fx:id="btn_cikis_onay" layoutX="153.0" layoutY="178.0" mnemonicParsing="false" onAction="#oda_cikis_Click" prefHeight="41.0" prefWidth="188.0" text="Onayla" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

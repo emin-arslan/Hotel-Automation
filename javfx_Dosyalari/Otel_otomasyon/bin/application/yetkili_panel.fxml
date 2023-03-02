@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.yetkili_panel">
+   <children>
+      <AnchorPane layoutY="77.0" prefHeight="623.0" prefWidth="200.0" style="-fx-background-color: #126e82;">
+         <children>
+            <Label fx:id="lbl_aktif_per" layoutX="43.0" layoutY="31.0" text="Aktif Olan Personeller" textFill="#19ff08">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lw_aktif" layoutX="6.0" layoutY="79.0" prefHeight="535.0" prefWidth="188.0" />
+            <Label fx:id="lbl_persayisi" layoutX="61.0" layoutY="48.0" text="Personel Sayisi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="81.0" prefWidth="1006.0" style="-fx-background-color: #393e46;">
+         <children>
+            <Label fx:id="lbl_merhaba" layoutX="6.0" layoutY="6.0" text="Hoşgeldiniz ... Bey" textFill="#ffc003">
+               <font>
+                  <Font name="Bookshelf Symbol 7" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_tarih" layoutX="868.0" layoutY="3.0" text="Tarih" textFill="#fc0000">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_baslik" layoutX="390.0" layoutY="27.0" text="Emin Otel Log İnceleme Paneli" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="77.0" prefHeight="623.0" prefWidth="805.0">
+         <children>
+            <TabPane fx:id="tab_islemler" layoutX="47.0" prefHeight="623.0" prefWidth="805.0" style="-fx-background-color: #393e46; -fx-tab-min-width: 380px;" stylesheets="@button.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Tüm Log Kayitlari">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.6503378378378378" layoutX="-20.0" layoutY="-62.0" orientation="VERTICAL" prefHeight="594.0" prefWidth="805.0" style="-fx-background-color: #393e46;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tw_logs" prefHeight="363.0" prefWidth="803.0" AnchorPane.bottomAnchor="-70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="log_id" prefWidth="75.0" text="İşlem No" />
+                                              <TableColumn fx:id="per_id" prefWidth="92.0" text="Personel İd" />
+                                              <TableColumn fx:id="yap_id" prefWidth="103.0" text="İşlem Yapilan id" />
+                                                <TableColumn fx:id="yap_kolon" prefWidth="121.0" text="İşlem Yapilan Kolon" />
+                                                <TableColumn fx:id="yap_tablo" prefWidth="118.0" text="İşlem Yapilan Tablo" />
+                                                <TableColumn fx:id="islem_tarih" prefWidth="87.0" text="İşlem Tarihi" />
+                                                <TableColumn fx:id="aciklama" prefWidth="208.0" text="Yapılan İşlem Açıklaması" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="266.0" prefWidth="803.0">
+                                       <children>
+                                          <TabPane fx:id="tab_logislemler" layoutX="350.0" layoutY="-42.0" prefHeight="204.0" prefWidth="803.0" style="-fx-tab-min-width: 775;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab text="Arama yap">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ComboBox fx:id="cb_log_ara" layoutX="53.0" layoutY="43.0" prefWidth="150.0" promptText="Kolon Seçin" />
+                                                            <TextField fx:id="txt_log_ara" layoutX="226.0" layoutY="43.0" promptText="Değer Giriniz" />
+                                                            <Button fx:id="btn_log_ara" layoutX="413.0" layoutY="35.0" mnemonicParsing="false" onAction="#log_ara" prefHeight="41.0" prefWidth="141.0" text="Arama Yap" />
+                                                         </children></AnchorPane>
+                                                </content>
+                                              </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Personel İşlemleri">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.652027027027027" layoutX="268.0" layoutY="62.0" orientation="VERTICAL" prefHeight="594.0" prefWidth="805.0" style="-fx-background-color: #393e46;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="tw_personel" layoutX="149.0" layoutY="60.0" onMouseClicked="#personel_to_textbox" prefHeight="383.0" prefWidth="803.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="personel_id" prefWidth="177.0" text="Personel id" />
+                                              <TableColumn fx:id="per_ad" prefWidth="192.0" text="Personel Ad" />
+                                                <TableColumn fx:id="per_soyad" prefWidth="227.0" text="Personel Soyad" />
+                                                <TableColumn fx:id="per_gorev" prefWidth="206.0" text="Personel Görev" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TabPane fx:id="tab_perislemler" layoutX="202.0" layoutY="2.0" prefHeight="203.0" prefWidth="803.0" style="-fx-tab-min-width: 180px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab text="Personel Ara">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ComboBox fx:id="cb_per_ara" layoutX="121.0" layoutY="42.0" prefHeight="25.0" prefWidth="174.0" promptText="Aranacak Kolonu Seçin" />
+                                                            <TextField fx:id="txt_per_ara" layoutX="327.0" layoutY="42.0" promptText="Kolon Değeri Girin" />
+                                                            <Button fx:id="btn_ara" layoutX="547.0" layoutY="34.0" mnemonicParsing="false" onAction="#personel_Ara" prefHeight="32.0" prefWidth="96.0" text="Ara" />
+                                                         </children></AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="Personel Ekle">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextField fx:id="txt_perad_ekle" layoutX="233.0" layoutY="29.0" />
+                                                            <TextField fx:id="txt_soyad_ekle" layoutX="233.0" layoutY="79.0" />
+                                                            <ComboBox fx:id="cb_gorev_ekle" layoutX="421.0" layoutY="29.0" prefWidth="150.0" promptText="Görevini Seçin" />
+                                                            <Button fx:id="btn_ekle" layoutX="421.0" layoutY="71.0" mnemonicParsing="false" onAction="#personel_ekle" prefHeight="41.0" prefWidth="148.0" text="Personeli Ekle" />
+                                                            <Text fill="WHITE" layoutX="154.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Adı:" />
+                                                            <Text fill="WHITE" layoutX="138.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Soyadı:" />
+                                                         </children></AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab text="Personel Güncelle">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextField fx:id="txt_guncelle_ad" layoutX="103.0" layoutY="55.0" promptText="Seçilen Personel Ad" />
+                                                            <TextField fx:id="txt_guncelle_soyad" layoutX="318.0" layoutY="55.0" promptText="Seçilen Personel Soyad" />
+                                                            <ComboBox fx:id="cb_guncelle_gorev" layoutX="553.0" layoutY="55.0" prefHeight="25.0" prefWidth="175.0" promptText="Seçilen Personel Görev" />
+                                                            <Label layoutX="63.0" layoutY="58.0" text="Ad:" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="265.0" layoutY="58.0" text="Soyad:" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="491.0" layoutY="58.0" text="Görev:" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Button fx:id="btn_guncelle" layoutX="103.0" layoutY="110.0" mnemonicParsing="false" onAction="#personel_guncelle" prefHeight="41.0" prefWidth="628.0" text="Güncelle">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Label layoutX="212.0" layoutY="14.0" text="Güncellenecek Personel Numarasi : " textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lbl_perid" layoutX="453.0" layoutY="4.0" prefHeight="41.0" prefWidth="266.0" text="Lütfen Tablodan istediğiniz Personeli Seçin" textFill="WHITE" />
+                                                         </children></AnchorPane>
+                                                  </content>
+                                                </Tab>
+                                                <Tab text="Personel Sil">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TextField fx:id="txt_sil" layoutX="226.0" layoutY="53.0" />
+                                                            <CheckBox fx:id="cb_per_onay" layoutX="190.0" layoutY="94.0" mnemonicParsing="false" text="Silmek istediğimi Onayliyorum." textFill="WHITE" />
+                                                            <Button fx:id="btn_sil" layoutX="402.0" layoutY="47.0" mnemonicParsing="false" onAction="#personel_sil" prefHeight="62.0" prefWidth="124.0" text="Personeli Sil" />
+                                                            <Label layoutX="190.0" layoutY="57.0" text="ID :" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children></AnchorPane>
+                                                  </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

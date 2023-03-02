@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="525.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="application.anaSahne">
+   <children>
+      <AnchorPane fx:id="menu_pane" prefHeight="525.0" prefWidth="185.0" style="-fx-background-color: #dff9fb;" />
+      <AnchorPane fx:id="degisken_pane" layoutX="185.0" prefHeight="525.0" prefWidth="565.0" style="-fx-background-color: #f7f1e3;">
+         <children>
+            <Label fx:id="lbl_id" layoutX="233.0" layoutY="58.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
